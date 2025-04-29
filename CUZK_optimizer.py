@@ -4,7 +4,7 @@ import io
 
 st.set_page_config(page_title="XYZ Reducer", layout="centered")
 
-st.title("XYZ Reducer Web App")
+st.title("XYZ Reducer")
 
 uploaded_file = st.file_uploader("Vyberte soubor XYZ", type="xyz")
 mode = st.radio(
@@ -44,7 +44,7 @@ if uploaded_file:
                 reduced = random.sample(lines, keep)
                 out = io.StringIO("\n".join(reduced))
                 st.download_button(
-                    "Stáhnout snížený soubor",
+                    "Stáhnout redukovaný soubor",
                     data=out.getvalue(),
                     file_name=uploaded_file.name.replace(".xyz", "_reduced.xyz"),
                     mime="text/plain",
@@ -67,7 +67,7 @@ if uploaded_file:
             else:
                 out = io.StringIO("\n".join(reduced))
                 st.download_button(
-                    "Stáhnout snížený soubor",
+                    "Stáhnout redukovaný soubor",
                     data=out.getvalue(),
                     file_name=uploaded_file.name.replace(".xyz", "_reduced.xyz"),
                     mime="text/plain",
@@ -99,7 +99,7 @@ if uploaded_file:
                 else:
                     out = io.StringIO("\n".join(reduced))
                     st.download_button(
-                        "Stáhnout snížený soubor",
+                        "Stáhnout redukovaný soubor",
                         data=out.getvalue(),
                         file_name=uploaded_file.name.replace(".xyz", "_reduced.xyz"),
                         mime="text/plain",
